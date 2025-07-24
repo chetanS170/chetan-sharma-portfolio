@@ -8,35 +8,47 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 15% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 15% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 15% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 270 100% 70%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 0 0% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 290 100% 80%;
+    --accent-foreground: 220 15% 6%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 20%;
+    --input: 220 15% 12%;
+    --ring: 270 100% 70%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom design tokens */
+    --glass: 220 15% 8% / 0.8;
+    --glass-border: 270 100% 70% / 0.2;
+    --glow: 270 100% 70% / 0.4;
+    --neon: 270 100% 80%;
+    --gradient-primary: linear-gradient(135deg, hsl(270 100% 70%), hsl(290 100% 80%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 15% 8%), hsl(220 15% 12%));
+    --gradient-glass: linear-gradient(135deg, hsl(220 15% 8% / 0.6), hsl(220 15% 12% / 0.4));
+    --shadow-glow: 0 0 30px hsl(270 100% 70% / 0.3);
+    --shadow-glass: 0 8px 32px hsl(220 15% 4% / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +112,48 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(270 100% 70% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(290 100% 80% / 0.08) 0%, transparent 50%);
   }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl bg-gradient-to-br from-[hsl(var(--glass))] to-[hsl(var(--glass))] 
+           border border-[hsl(var(--glass-border))] rounded-[var(--radius)] 
+           shadow-[var(--shadow-glass)];
+  }
+  
+  .glass-header {
+    @apply backdrop-blur-md bg-[hsl(var(--glass))] border-b border-[hsl(var(--glass-border))];
+  }
+  
+  .neon-glow {
+    @apply shadow-[var(--shadow-glow)];
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .hover-lift {
+    @apply transition-[var(--transition-smooth)] hover:transform hover:-translate-y-2 hover:shadow-[var(--shadow-glow)];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
