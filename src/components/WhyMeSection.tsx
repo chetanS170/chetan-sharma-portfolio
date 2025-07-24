@@ -4,33 +4,33 @@ const WhyMeSection = () => {
   const features = [
     {
       icon: Zap,
-      title: "Conversion-Focused",
-      description: "Every design decision is made to maximize your conversion rates and business goals",
+      title: "Click-Focused",
+      description: "Every thumbnail is designed to maximize click-through rates and audience engagement",
     },
     {
       icon: Smartphone,
-      title: "Fully Responsive",
-      description: "Perfect experience across all devices - desktop, tablet, and mobile",
+      title: "Platform Optimized",
+      description: "Perfect visibility across YouTube, Instagram, TikTok, and all social platforms",
     },
     {
       icon: DollarSign,
       title: "Affordable Pricing",
-      description: "Premium quality design at competitive rates that fit your budget",
+      description: "Premium quality thumbnail designs at competitive rates that fit your budget",
     },
     {
       icon: Clock,
       title: "Lightning Fast",
-      description: "Quick turnaround times without compromising on quality or attention to detail",
+      description: "Quick turnaround times to keep your content schedule on track",
     },
     {
       icon: Star,
       title: "Premium Quality",
-      description: "Pixel-perfect designs that reflect your brand's professionalism and values",
+      description: "Eye-catching designs that stand out in crowded feeds and search results",
     },
     {
       icon: Users,
       title: "Effortless Process",
-      description: "Smooth collaboration and transparent communication throughout the project",
+      description: "Smooth collaboration with unlimited revisions until you're 100% satisfied",
     },
   ];
 
@@ -42,7 +42,7 @@ const WhyMeSection = () => {
             Why Choose <span className="gradient-text">Me?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I combine creative design with strategic thinking to deliver websites that not only look amazing but drive real business results
+            I combine creative design with strategic thinking to create thumbnails that not only look amazing but drive real engagement and growth
           </p>
         </div>
 

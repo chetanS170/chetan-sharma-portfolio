@@ -18,12 +18,12 @@ const Footer = () => {
   ];
 
   const services = [
-    "Web Design",
-    "UI/UX Design", 
-    "Brand Identity",
-    "E-commerce",
-    "Mobile Design",
-    "Consulting"
+    "YouTube Thumbnails",
+    "Instagram Graphics", 
+    "TikTok Covers",
+    "Gaming Thumbnails",
+    "Educational Content",
+    "Brand Consistency"
   ];
 
   return (
@@ -35,11 +35,11 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="text-2xl font-bold gradient-text mb-4">
-                DesignStudio
+                ThumbnailStudio
               </div>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Creating premium web experiences that convert visitors into customers. 
-                Let's build something amazing together.
+                Creating eye-catching thumbnails that boost click-through rates and grow your audience. 
+                Let's make your content stand out together.
               </p>
               <div className="flex gap-4">
                 {socialLinks.map((social) => {
@@ -95,7 +95,7 @@ const Footer = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span className="text-muted-foreground">hello@designstudio.com</span>
+                  <span className="text-muted-foreground">hello@thumbnailstudio.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-primary" />
@@ -113,7 +113,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
           <p className="text-muted-foreground text-sm">
-            © 2024 DesignStudio. All rights reserved.
+            © 2024 ThumbnailStudio. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

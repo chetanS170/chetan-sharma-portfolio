@@ -6,20 +6,20 @@ const CTASection = () => {
     {
       icon: MessageCircle,
       number: "01",
-      title: "Let's Talk",
-      description: "Share your vision and goals in a friendly consultation call"
+      title: "Share Your Vision",
+      description: "Tell me about your content style and target audience in a quick chat"
     },
     {
       icon: Palette,
       number: "02", 
       title: "Design Magic",
-      description: "I'll create stunning designs that capture your brand perfectly"
+      description: "I'll create stunning thumbnails that perfectly match your brand and style"
     },
     {
       icon: Rocket,
       number: "03",
-      title: "Launch Success",
-      description: "Watch your new website drive conversions and grow your business"
+      title: "Boost Your CTR",
+      description: "Watch your click-through rates soar with eye-catching thumbnails"
     }
   ];
 
@@ -37,9 +37,9 @@ const CTASection = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Get Started in <span className="gradient-text">3 Simple Steps</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From initial consultation to launching your dream website, the process is smooth and transparent
-            </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            From initial brief to delivering your stunning thumbnails, the process is smooth and collaborative
+          </p>
           </div>
 
           {/* Steps */}
@@ -83,19 +83,19 @@ const CTASection = () => {
           <div className="text-center">
             <div className="glass-card p-8 lg:p-12 max-w-4xl mx-auto">
               <h3 className="text-3xl lg:text-4xl font-bold mb-6">
-                Ready to Transform Your Business?
+                Ready to Boost Your Click-Through Rate?
               </h3>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Join hundreds of successful businesses who've boosted their conversions with premium web design. 
-                Let's create something amazing together.
+                Join hundreds of successful content creators who've increased their views with 
+                eye-catching thumbnail designs. Let's create thumbnails that get clicked.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button variant="premium" size="lg" className="group">
-                  Start Your Project
+                  Order Thumbnails
                 </Button>
                 <Button variant="glass" size="lg">
-                  Schedule Consultation
+                  View Portfolio
                 </Button>
               </div>
 

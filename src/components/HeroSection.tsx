@@ -34,15 +34,15 @@ const HeroSection = () => {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            I design websites that{' '}
-            <span className="gradient-text">turn your visitors</span>{' '}
-            into customers
+            I design thumbnails that{' '}
+            <span className="gradient-text">turn your views</span>{' '}
+            into clicks
           </h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto text-balance">
-            Premium web design & development that combines stunning visuals with 
-            conversion-focused strategy. Ready to transform your business?
+            Eye-catching thumbnail designs that boost your click-through rates and grow your audience. 
+            Ready to transform your content performance?
           </p>
 
           {/* CTA Buttons */}

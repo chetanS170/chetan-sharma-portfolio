@@ -3,12 +3,12 @@ import { Check, ExternalLink, ShoppingCart } from 'lucide-react';
 
 const HighlightedProject = () => {
   const features = [
-    "Modern, conversion-optimized design",
-    "Fully responsive across all devices",
-    "Lightning-fast page load speeds",
-    "SEO optimized for search engines",
-    "Integrated analytics and tracking",
-    "Complete documentation included"
+    "Eye-catching design that stands out",
+    "Optimized for maximum click-through rates",
+    "Custom typography and color schemes",
+    "Multiple format variations included", 
+    "Source files provided (PSD/AI)",
+    "Complete style guide included"
   ];
 
   return (
@@ -34,14 +34,14 @@ const HighlightedProject = () => {
             {/* Project Details */}
             <div className="space-y-8">
               <div>
-                <p className="text-primary font-medium mb-2">FEATURED PROJECT</p>
+                <p className="text-primary font-medium mb-2">FEATURED PACK</p>
                 <h3 className="text-3xl lg:text-4xl font-bold mb-4">
-                  Premium E-commerce Template
+                  Gaming Thumbnail Pack
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  A complete e-commerce solution built with modern technologies. 
-                  Perfect for businesses ready to scale their online presence with 
-                  a professional, conversion-focused design.
+                  A complete gaming thumbnail collection with 20+ high-converting designs. 
+                  Perfect for gaming content creators ready to boost their CTR and grow their 
+                  channel with professional-grade thumbnails.
                 </p>
               </div>
 
@@ -61,11 +61,11 @@ const HighlightedProject = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="premium" size="lg" className="group">
                   <ShoppingCart className="mr-2 h-5 w-5" />
-                  Buy Template
+                  Buy Pack
                 </Button>
                 <Button variant="glass" size="lg" className="group">
                   <ExternalLink className="mr-2 h-5 w-5" />
-                  View Live Demo
+                  View Samples
                 </Button>
               </div>
 
@@ -73,15 +73,15 @@ const HighlightedProject = () => {
               <div className="glass-card p-6 border-primary/20">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground">Starting at</p>
+                    <p className="text-sm text-muted-foreground">Pack price</p>
                     <p className="text-2xl font-bold">
-                      <span className="gradient-text">$299</span>
+                      <span className="gradient-text">$49</span>
                       <span className="text-sm text-muted-foreground ml-2">one-time</span>
                     </p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-muted-foreground">Save 40%</p>
-                    <p className="text-sm line-through text-muted-foreground">$499</p>
+                    <p className="text-sm line-through text-muted-foreground">$99</p>
                   </div>
                 </div>
               </div>

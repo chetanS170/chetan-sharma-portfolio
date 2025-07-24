@@ -5,17 +5,17 @@ const BonusSection = () => {
   const bonuses = [
     {
       icon: Gift,
-      title: "3 Months Framer Pro",
+      title: "3 Months Canva Pro",
       value: "$45 Value",
-      description: "Complete access to Framer Pro with all premium features and templates",
-      features: ["Premium templates", "Advanced animations", "CMS access", "Team collaboration"]
+      description: "Complete access to Canva Pro with all premium features and templates for thumbnail creation",
+      features: ["Premium templates", "Brand kit access", "Background remover", "Unlimited storage"]
     },
     {
       icon: Video,
-      title: "Video Course",
+      title: "Thumbnail Mastery Course",
       value: "$199 Value", 
-      description: "Comprehensive web design course covering modern techniques and best practices",
-      features: ["12+ hours content", "Design systems", "Figma mastery", "Portfolio tips"]
+      description: "Comprehensive thumbnail design course covering psychology, trends, and optimization techniques",
+      features: ["12+ hours content", "Design psychology", "Platform optimization", "Analytics tracking"]
     }
   ];
 
@@ -31,7 +31,7 @@ const BonusSection = () => {
             Exclusive <span className="gradient-text">Bonuses</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get these premium bonuses when you work with me this month
+            Get these premium bonuses when you order your thumbnail pack this month
           </p>
         </div>
 
@@ -92,7 +92,7 @@ const BonusSection = () => {
               Total Bonus Value: <span className="gradient-text">$244</span>
             </h3>
             <p className="text-muted-foreground mb-6">
-              These bonuses are included free when you start your project this month
+              These bonuses are included free when you order your thumbnail pack this month
             </p>
             <Button variant="premium" size="lg">
               Claim Your Bonuses

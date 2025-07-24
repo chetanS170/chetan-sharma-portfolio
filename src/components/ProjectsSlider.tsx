@@ -5,35 +5,35 @@ const ProjectsSlider = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      category: "Web Development",
-      description: "Modern shopping experience with seamless checkout flow",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-      tags: ["React", "TypeScript", "Stripe"],
+      title: "Gaming Channel Pack",
+      category: "YouTube Thumbnails",
+      description: "High-energy gaming thumbnails that increased CTR by 45%",
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop",
+      tags: ["Gaming", "YouTube", "Photoshop"],
     },
     {
       id: 2,
-      title: "SaaS Dashboard",
-      category: "UI/UX Design",
-      description: "Clean and intuitive analytics dashboard for productivity",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      tags: ["Figma", "React", "Chart.js"],
+      title: "Tech Review Series",
+      category: "Tech Thumbnails",
+      description: "Clean and professional thumbnails for tech content",
+      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
+      tags: ["Tech", "Reviews", "Minimalist"],
     },
     {
       id: 3,
-      title: "Brand Identity",
-      category: "Graphic Design",
-      description: "Complete brand redesign for tech startup",
-      image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=600&h=400&fit=crop",
-      tags: ["Branding", "Logo Design", "Guidelines"],
+      title: "Lifestyle Vlog Pack",
+      category: "Lifestyle Content",
+      description: "Vibrant and engaging thumbnails for lifestyle vlogs",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      tags: ["Lifestyle", "Vlogs", "Colorful"],
     },
     {
       id: 4,
-      title: "Mobile App UI",
-      category: "Mobile Design",
-      description: "Sleek mobile interface for fitness tracking app",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
-      tags: ["Mobile", "UI Design", "Prototyping"],
+      title: "Educational Series",
+      category: "Educational Content",
+      description: "Clear and informative thumbnails for learning content",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop",
+      tags: ["Education", "Tutorials", "Clean"],
     },
   ];
 
@@ -45,7 +45,7 @@ const ProjectsSlider = () => {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Showcasing my latest work across web development, UI/UX design, and branding
+            Showcasing my latest thumbnail designs across gaming, tech, lifestyle, and educational content
           </p>
         </div>
 
