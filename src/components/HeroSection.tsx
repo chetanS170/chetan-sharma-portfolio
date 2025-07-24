@@ -63,7 +63,7 @@ const HeroSection = () => {
               Trusted by innovative companies
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-60">
-              {['Microsoft', 'Google', 'Apple', 'Amazon', 'Meta', 'Netflix', 'Spotify', 'Adobe'].map((brand, index) => (
+              {['Paltiminati', 'Haryanvi old Skool', 'Harsh Haryanvi', 'Vague Cinema'].map((brand, index) => (
                 <div 
                   key={brand} 
                   className="text-lg font-semibold hover:opacity-100 transition-opacity duration-300 hover:text-primary cursor-pointer floating"
