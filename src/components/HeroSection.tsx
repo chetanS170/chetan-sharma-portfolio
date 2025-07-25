@@ -6,14 +6,30 @@ import profilePhoto from '@/assets/profile-photo.jpg';
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* 3D Animated Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Designer workspace" 
-          className="w-full h-full object-cover opacity-20"
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background" />
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            background: `
+              radial-gradient(circle at 20% 20%, hsl(0, 0%, 15%) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, hsl(0, 0%, 10%) 0%, transparent 50%),
+              radial-gradient(circle at 40% 60%, hsl(0, 84%, 60%, 0.1) 0%, transparent 40%)
+            `,
+            animation: 'mesh-flow 20s ease-in-out infinite'
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90" />
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            background: `
+              linear-gradient(45deg, transparent 40%, hsl(0, 0%, 8%) 50%, transparent 60%),
+              linear-gradient(-45deg, transparent 40%, hsl(0, 0%, 12%) 50%, transparent 60%)
+            `,
+            animation: 'mesh-flow 25s ease-in-out infinite reverse'
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-6 py-20 relative z-10">
@@ -33,7 +49,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-sparkle">
             I design thumbnails that{' '}
             <span className="gradient-text">turn your views</span>{' '}
             into clicks
