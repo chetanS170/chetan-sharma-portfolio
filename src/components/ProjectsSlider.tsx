@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, ArrowRight, Star } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 
 const ProjectsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,37 +10,25 @@ const ProjectsSlider = () => {
     {
       id: 1,
       title: "Gaming Channel Pack",
-      category: "YouTube Thumbnails",
-      description: "High-energy gaming thumbnails that increased CTR by 45%",
       image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=450&fit=crop",
-      rating: 4,
       tags: ["Gaming", "YouTube", "Photoshop"],
     },
     {
       id: 2,
       title: "Tech Review Series",
-      category: "Tech Thumbnails",
-      description: "Clean and professional thumbnails for tech content",
       image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=450&fit=crop",
-      rating: 4,
       tags: ["Tech", "Reviews", "Minimalist"],
     },
     {
       id: 3,
       title: "Lifestyle Vlog Pack",
-      category: "Lifestyle Content",
-      description: "Vibrant and engaging thumbnails for lifestyle vlogs",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop",
-      rating: 4,
       tags: ["Lifestyle", "Vlogs", "Colorful"],
     },
     {
       id: 4,
       title: "Educational Series",
-      category: "Educational Content",
-      description: "Clear and informative thumbnails for learning content",
       image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=450&fit=crop",
-      rating: 4,
       tags: ["Education", "Tutorials", "Clean"],
     },
   ];
@@ -55,20 +43,6 @@ const ProjectsSlider = () => {
     }
   }, [isPaused, projects.length]);
 
-  const renderStars = (rating) => {
-    return (
-      <div className="flex items-center gap-1">
-        {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            className={`h-4 w-4 ${
-              i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'
-            }`}
-          />
-        ))}
-      </div>
-    );
-  };
 
   return (
     <section id="work" className="py-20">
@@ -119,15 +93,7 @@ const ProjectsSlider = () => {
                         {/* Project Details */}
                         <div className="flex flex-col justify-center space-y-6">
                           <div>
-                            <p className="text-sm text-primary font-medium mb-2">{project.category}</p>
                             <h3 className="text-3xl font-bold mb-4 text-sparkle">{project.title}</h3>
-                            <p className="text-lg text-muted-foreground mb-6">{project.description}</p>
-                          </div>
-
-                          {/* Rating */}
-                          <div className="flex items-center gap-3 mb-6">
-                            <span className="text-sm font-medium">Client Rating:</span>
-                            {renderStars(project.rating)}
                           </div>
 
                           {/* Tags */}
@@ -197,23 +163,18 @@ const ProjectsSlider = () => {
 
               <div className="space-y-4">
                 <div>
-                  <p className="text-sm text-primary font-medium mb-2">{project.category}</p>
                   <h4 className="text-xl font-bold mb-2">{project.title}</h4>
-                  <p className="text-muted-foreground text-sm">{project.description}</p>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-wrap gap-1">
-                    {project.tags.slice(0, 2).map((tag) => (
-                      <span 
-                        key={tag}
-                        className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  {renderStars(project.rating)}
+                <div className="flex flex-wrap gap-1">
+                  {project.tags.slice(0, 2).map((tag) => (
+                    <span 
+                      key={tag}
+                      className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
