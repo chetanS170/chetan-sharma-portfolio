@@ -73,23 +73,6 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Client Logos */}
-          <div className="glass-card p-8 max-w-4xl mx-auto">
-            <p className="text-sm text-muted-foreground mb-6 uppercase tracking-wider">
-              Trusted by innovative companies
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-60">
-              {['Paltiminati', 'Haryanvi old Skool', 'Harsh Haryanvi', 'Vague Cinema'].map((brand, index) => (
-                <div 
-                  key={brand} 
-                  className="text-lg font-semibold hover:opacity-100 transition-opacity duration-300 hover:text-primary cursor-pointer floating"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  {brand}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
