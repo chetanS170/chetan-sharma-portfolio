@@ -21,8 +21,8 @@ const buttonVariants = cva(
         glow: "bg-primary text-primary-foreground hover:shadow-glow transition-all duration-300 hover:scale-105",
         glass: "glass-card text-foreground hover:border-primary/50 hover:shadow-glow transition-all duration-300",
         premium: "bg-gradient-to-r from-primary via-secondary to-accent text-background border-0 hover:shadow-glow transition-all duration-300 hover:scale-105 font-semibold shadow-lg",
-        vibrant: "bg-gradient-to-r from-primary to-secondary text-background border-0 hover:from-secondary hover:to-accent hover:scale-110 transition-all duration-300 font-semibold shadow-2xl shadow-primary/30",
-        electric: "bg-gradient-to-r from-accent via-primary to-secondary text-background border-0 hover:shadow-[0_0_30px_hsl(var(--accent)/0.8)] hover:scale-110 transition-all duration-500 font-bold animate-pulse",
+        vibrant: "bg-blue-500 text-white border-0 hover:bg-blue-600 hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] hover:scale-105 transition-all duration-300 font-semibold shadow-lg",
+        electric: "bg-green-500 text-white border-0 hover:bg-green-600 hover:shadow-[0_0_25px_rgba(34,197,94,0.5)] hover:scale-105 transition-all duration-300 font-bold",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -67,9 +67,9 @@ const ProjectsSlider = () => {
 
           {/* Slideshow Container */}
           <div className="relative max-w-6xl mx-auto overflow-hidden">
-            {/* Dark fade edges - fixed positioning and stronger gradient */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
+            {/* Dark fade edges - improved positioning and coverage */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background via-background/95 via-background/60 to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background via-background/95 via-background/60 to-transparent z-20 pointer-events-none" />
             
             <div className="overflow-hidden">
               <div 
