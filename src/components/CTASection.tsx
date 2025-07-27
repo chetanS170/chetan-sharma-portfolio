@@ -135,12 +135,12 @@ const CTASection = () => {
                 <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
                   <DialogTrigger asChild>
                     <Button 
-                      variant="premium" 
+                      variant="electric" 
                       size="lg" 
-                      className="group bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
+                      className="group px-12 py-6 text-xl font-bold"
                     >
                       Start Your Project Now
-                      <Rocket className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      <Rocket className="ml-3 h-7 w-7 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="max-w-2xl bg-background/95 backdrop-blur-xl border border-glass-border">

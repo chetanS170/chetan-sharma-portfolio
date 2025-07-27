@@ -63,17 +63,17 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button variant="premium" size="lg" className="group">
+            <Button variant="electric" size="lg" className="group px-8 py-4 text-lg">
               Get in Touch
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
-              variant="glass" 
+              variant="vibrant" 
               size="lg" 
-              className="group bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border-2 border-primary/30 hover:border-primary/50 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group px-8 py-4 text-lg"
               onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <Play className="mr-2 h-5 w-5" />
+              <Play className="mr-2 h-6 w-6" />
               See My Work
             </Button>
           </div>

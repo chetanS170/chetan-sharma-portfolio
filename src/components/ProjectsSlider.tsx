@@ -67,9 +67,9 @@ const ProjectsSlider = () => {
 
           {/* Slideshow Container */}
           <div className="relative max-w-6xl mx-auto overflow-hidden">
-            {/* Dark fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            {/* Dark fade edges - fixed positioning and stronger gradient */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
             
             <div className="overflow-hidden">
               <div 
@@ -158,13 +158,13 @@ const ProjectsSlider = () => {
 
         <div className="text-center mt-12">
           <Button 
-            variant="outline" 
+            variant="vibrant" 
             size="lg"
             onClick={() => navigate('/gallery')}
-            className="bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20 border-2 border-primary/30 hover:border-primary/50 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="px-8 py-4 text-lg"
           >
             View All Projects
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-6 w-6" />
           </Button>
         </div>
 
