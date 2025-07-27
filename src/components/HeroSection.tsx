@@ -67,7 +67,12 @@ const HeroSection = () => {
               Get in Touch
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="glass" size="lg" className="group">
+            <Button 
+              variant="glass" 
+              size="lg" 
+              className="group bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border-2 border-primary/30 hover:border-primary/50 shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <Play className="mr-2 h-5 w-5" />
               See My Work
             </Button>

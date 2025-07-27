@@ -1,18 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight, X, Maximize2 } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectsSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const projects = [
-    {
-      id: 1,
-      title: "Gaming Channel Pack",
-      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=450&fit=crop",
-      tags: ["Gaming", "YouTube", "Photoshop"],
-    },
     {
       id: 2,
       title: "Tech Review Series",
@@ -31,17 +27,28 @@ const ProjectsSlider = () => {
       image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=450&fit=crop",
       tags: ["Education", "Tutorials", "Clean"],
     },
+    {
+      id: 5,
+      title: "Fitness Channel",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=450&fit=crop",
+      tags: ["Fitness", "Health", "Motivational"],
+    },
+    {
+      id: 6,
+      title: "Travel Vlogs",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=450&fit=crop",
+      tags: ["Travel", "Adventure", "Cinematic"],
+    },
+    {
+      id: 7,
+      title: "Food Reviews",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=450&fit=crop",
+      tags: ["Food", "Reviews", "Colorful"],
+    },
   ];
 
-  // Auto-scroll functionality
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % projects.length);
-      }, 4000);
-      return () => clearInterval(interval);
-    }
-  }, [isPaused, projects.length]);
+  // Create duplicated projects for infinite scroll
+  const duplicatedProjects = [...projects, ...projects];
 
 
   return (
@@ -59,75 +66,40 @@ const ProjectsSlider = () => {
           </div>
 
           {/* Slideshow Container */}
-          <div 
-            className="relative max-w-6xl mx-auto"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <div className="overflow-hidden rounded-2xl">
+          <div className="relative max-w-6xl mx-auto overflow-hidden">
+            {/* Dark fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <div className="overflow-hidden">
               <div 
-                className="flex transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                className="flex gap-6 animate-scroll-smooth"
+                style={{
+                  width: `${duplicatedProjects.length * 320}px`,
+                }}
               >
-                {projects.map((project) => (
-                  <div key={project.id} className="w-full flex-shrink-0">
-                    <div className="glass-card hover-lift group relative overflow-hidden bg-gradient-glass backdrop-blur-xl border border-glass-border">
-                      <div className="grid md:grid-cols-2 gap-8 p-8">
-                        {/* Project Image */}
-                        <div className="relative overflow-hidden rounded-xl">
-                          <img 
-                            src={project.image} 
-                            alt={project.title}
-                            className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div className="flex gap-2">
-                              <Button variant="glass" size="sm" className="backdrop-blur-md">
-                                <ExternalLink className="h-4 w-4" />
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Project Details */}
-                        <div className="flex flex-col justify-center space-y-6">
-                          <div>
-                            <h3 className="text-3xl font-bold mb-4 text-sparkle">{project.title}</h3>
-                          </div>
-
-                          {/* Tags */}
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag) => (
-                              <span 
-                                key={tag}
-                                className="px-4 py-2 text-sm font-medium bg-primary/10 text-primary rounded-full border border-primary/20 backdrop-blur-sm"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
+                {duplicatedProjects.map((project, index) => (
+                  <div key={`${project.id}-${index}`} className="flex-shrink-0 w-80">
+                    <div 
+                      className="relative overflow-hidden rounded-xl cursor-pointer group hover-lift"
+                      onClick={() => setSelectedImage(project.image)}
+                      style={{ aspectRatio: '16/9' }}
+                    >
+                      <img 
+                        src={project.image} 
+                        alt={`Thumbnail ${project.id}`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-8 h-8 bg-primary/20 backdrop-blur-md rounded-full flex items-center justify-center">
+                          <Maximize2 className="h-4 w-4 text-primary" />
                         </div>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* Slide Indicators */}
-            <div className="flex justify-center mt-8 gap-3">
-              {projects.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide 
-                      ? 'bg-primary shadow-glow' 
-                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                  }`}
-                />
-              ))}
             </div>
           </div>
         </div>
@@ -140,37 +112,40 @@ const ProjectsSlider = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div 
               key={`grid-${project.id}`} 
-              className="glass-card p-6 hover-lift group backdrop-blur-xl"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="glass-card p-4 hover-lift group backdrop-blur-xl animate-fade-in"
+              style={{ 
+                animationDelay: `${index * 0.1}s`,
+                animationFillMode: 'both'
+              }}
             >
-              <div className="relative overflow-hidden rounded-lg mb-6">
+              <div 
+                className="relative overflow-hidden rounded-lg mb-4 cursor-pointer"
+                onClick={() => setSelectedImage(project.image)}
+                style={{ aspectRatio: '16/9' }}
+              >
                 <img 
                   src={project.image} 
-                  alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                  alt={`Thumbnail ${project.id}`}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button variant="glass" size="sm">
-                    <ExternalLink className="h-4 w-4" />
-                  </Button>
+                  <div className="w-8 h-8 bg-primary/20 backdrop-blur-md rounded-full flex items-center justify-center">
+                    <Maximize2 className="h-4 w-4 text-primary" />
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <div>
-                  <h4 className="text-xl font-bold mb-2">{project.title}</h4>
-                </div>
-
+              <div className="space-y-3">
                 <div className="flex flex-wrap gap-1">
                   {project.tags.slice(0, 2).map((tag) => (
                     <span 
                       key={tag}
-                      className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
+                      className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20 animate-circle-outline"
                     >
                       {tag}
                     </span>
@@ -182,11 +157,39 @@ const ProjectsSlider = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => navigate('/gallery')}
+            className="bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20 border-2 border-primary/30 hover:border-primary/50 shadow-lg hover:shadow-xl transition-all duration-300"
+          >
             View All Projects
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
+
+        {/* Image Modal */}
+        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+          <DialogContent className="max-w-5xl w-full p-2 bg-background/95 backdrop-blur-xl border border-glass-border">
+            <div className="relative">
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 z-50 w-10 h-10 bg-background/80 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-background transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+              {selectedImage && (
+                <div className="relative overflow-hidden rounded-lg">
+                  <img 
+                    src={selectedImage} 
+                    alt="Full size thumbnail"
+                    className="w-full h-auto object-contain max-h-[80vh]"
+                  />
+                </div>
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

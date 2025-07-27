@@ -202,3 +202,111 @@ All colors MUST be HSL.
   66% { transform: translateX(8px) translateY(-15px) rotateZ(-0.5deg); }
   100% { transform: translateX(0) translateY(0) rotateZ(0deg); }
 }
+
+/* Continuous Scroll Animation */
+.animate-scroll-smooth {
+  animation: scroll-continuous 40s linear infinite;
+}
+
+@keyframes scroll-continuous {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Scroll Reveal Animation */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Circle Outline Animation for Badges */
+.animate-circle-outline {
+  position: relative;
+  overflow: visible;
+}
+
+.animate-circle-outline::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent))) border-box;
+  z-index: -1;
+  opacity: 0;
+  animation: circle-reveal 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes circle-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+/* Enhanced Button Animations */
+.btn-enhanced {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-enhanced:hover::before {
+  left: 100%;
+}
+
+/* Smooth scroll for entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Intersection Observer for scroll animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

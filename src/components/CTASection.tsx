@@ -1,7 +1,48 @@
 import { Button } from '@/components/ui/button';
-import { MessageCircle, Palette, Rocket } from 'lucide-react';
+import { MessageCircle, Palette, Rocket, Mail, Phone, Send } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 const CTASection = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+    projectType: ''
+  });
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Since Supabase integration is not active yet, we'll show a message
+    toast({
+      title: "Thank you for your interest!",
+      description: "Please email me directly at chetansharma44170@gmail.com or contact via WhatsApp: 9870859103",
+    });
+    setIsFormOpen(false);
+    setFormData({ name: '', email: '', message: '', projectType: '' });
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:chetansharma44170@gmail.com?subject=Thumbnail Design Inquiry';
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/919870859103?text=Hi%20Chetan,%20I%27m%20interested%20in%20your%20thumbnail%20design%20services', '_blank');
+  };
+
   const steps = [
     {
       icon: MessageCircle,
@@ -91,12 +132,113 @@ const CTASection = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="premium" size="lg" className="group">
-                  Order Thumbnails
-                </Button>
-                <Button variant="glass" size="lg">
-                  View Portfolio
-                </Button>
+                <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
+                  <DialogTrigger asChild>
+                    <Button 
+                      variant="premium" 
+                      size="lg" 
+                      className="group bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
+                    >
+                      Start Your Project Now
+                      <Rocket className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl bg-background/95 backdrop-blur-xl border border-glass-border">
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold mb-6 text-center gradient-text">Let's Create Amazing Thumbnails Together!</h3>
+                      
+                      {/* Quick Contact Options */}
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <Button 
+                          variant="outline" 
+                          onClick={handleEmailClick}
+                          className="h-auto p-4 flex flex-col items-center gap-2 bg-primary/5 hover:bg-primary/10 border-primary/30"
+                        >
+                          <Mail className="h-6 w-6 text-primary" />
+                          <span className="text-sm">Email Me Directly</span>
+                          <span className="text-xs text-muted-foreground">chetansharma44170@gmail.com</span>
+                        </Button>
+                        <Button 
+                          variant="outline" 
+                          onClick={handleWhatsAppClick}
+                          className="h-auto p-4 flex flex-col items-center gap-2 bg-secondary/5 hover:bg-secondary/10 border-secondary/30"
+                        >
+                          <Phone className="h-6 w-6 text-secondary" />
+                          <span className="text-sm">WhatsApp Chat</span>
+                          <span className="text-xs text-muted-foreground">+91 9870859103</span>
+                        </Button>
+                      </div>
+
+                      <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                          <span className="w-full border-t border-muted-foreground/20" />
+                        </div>
+                        <div className="relative flex justify-center text-xs uppercase">
+                          <span className="bg-background px-2 text-muted-foreground">Or fill the form below</span>
+                        </div>
+                      </div>
+
+                      {/* Contact Form */}
+                      <form onSubmit={handleSubmit} className="space-y-4 mt-6">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <Label htmlFor="name">Name</Label>
+                            <Input
+                              id="name"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleInputChange}
+                              required
+                              className="bg-background/50"
+                            />
+                          </div>
+                          <div>
+                            <Label htmlFor="email">Email</Label>
+                            <Input
+                              id="email"
+                              name="email"
+                              type="email"
+                              value={formData.email}
+                              onChange={handleInputChange}
+                              required
+                              className="bg-background/50"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <Label htmlFor="projectType">Project Type</Label>
+                          <Input
+                            id="projectType"
+                            name="projectType"
+                            placeholder="e.g., YouTube thumbnails, podcast covers, etc."
+                            value={formData.projectType}
+                            onChange={handleInputChange}
+                            className="bg-background/50"
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="message">Project Details</Label>
+                          <Textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell me about your project, style preferences, timeline, etc."
+                            value={formData.message}
+                            onChange={handleInputChange}
+                            rows={4}
+                            className="bg-background/50"
+                          />
+                        </div>
+                        <Button 
+                          type="submit" 
+                          className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80"
+                        >
+                          <Send className="mr-2 h-4 w-4" />
+                          Send Now
+                        </Button>
+                      </form>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
 
               {/* Trust Indicators */}

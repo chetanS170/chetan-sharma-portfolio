@@ -29,7 +29,7 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="text-xl font-bold gradient-text">
-          ThumbnailStudio
+          Chetan Sharma
         </div>
 
         {/* Desktop Navigation */}

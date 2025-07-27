@@ -35,7 +35,7 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="text-2xl font-bold gradient-text mb-4">
-                ThumbnailStudio
+                Chetan Sharma
               </div>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Creating eye-catching thumbnails that boost click-through rates and grow your audience. 
@@ -95,15 +95,25 @@ const Footer = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span className="text-muted-foreground">hello@thumbnailstudio.com</span>
+                  <button 
+                    onClick={() => window.location.href = 'mailto:chetansharma44170@gmail.com?subject=Thumbnail Design Inquiry'}
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                  >
+                    chetansharma44170@gmail.com
+                  </button>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-primary" />
-                  <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                  <button 
+                    onClick={() => window.open('https://wa.me/919870859103?text=Hi%20Chetan,%20I%27m%20interested%20in%20your%20thumbnail%20design%20services', '_blank')}
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                  >
+                    +91 9870859103
+                  </button>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span className="text-muted-foreground">San Francisco, CA</span>
+                  <span className="text-muted-foreground">India</span>
                 </div>
               </div>
             </div>
@@ -113,7 +123,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
           <p className="text-muted-foreground text-sm">
-            © 2024 ThumbnailStudio. All rights reserved.
+            © 2024 Chetan Sharma. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

@@ -13,7 +13,7 @@ const Index = () => {
       <HeroSection />
       <ProjectsSlider />
       <WhyMeSection />
-      <HighlightedProject />
+      
       <CTASection />
       <Footer />
     </div>
