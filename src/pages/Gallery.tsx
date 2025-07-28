@@ -3,10 +3,12 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Maximize2, X, Mail, Phone } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { useNavigate } from 'react-router-dom';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const navigate = useNavigate();
+  useScrollReveal();
 
   const thumbnails = [
     {
@@ -112,11 +114,11 @@ const Gallery = () => {
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-6">
           {/* Title Section */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-sparkle">
+          <div className="text-center mb-16 scroll-reveal">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-sparkle">
               Thumbnail <span className="gradient-text">Gallery</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               A showcase of high-converting thumbnail designs across various niches
             </p>
           </div>
@@ -126,10 +128,9 @@ const Gallery = () => {
             {thumbnails.map((thumbnail, index) => (
               <div
                 key={thumbnail.id}
-                className="glass-card p-4 hover-lift group animate-fade-in"
+                className="glass-card p-3 sm:p-4 hover-lift group scroll-reveal"
                 style={{
-                  animationDelay: `${index * 0.1}s`,
-                  animationFillMode: 'both'
+                  animationDelay: `${index * 0.1}s`
                 }}
               >
                 <div
@@ -160,11 +161,11 @@ const Gallery = () => {
 
           {/* Contact CTA */}
           <div className="text-center">
-            <div className="glass-card p-8 max-w-2xl mx-auto animate-fade-in">
-              <h3 className="text-2xl font-bold mb-4">
+            <div className="glass-card p-6 sm:p-8 max-w-2xl mx-auto scroll-reveal">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4">
                 Ready to Create Your Own Stunning Thumbnails?
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 px-4">
                 Let's work together to create thumbnails that will boost your click-through rates
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

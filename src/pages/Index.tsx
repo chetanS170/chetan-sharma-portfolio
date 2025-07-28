@@ -5,8 +5,11 @@ import WhyMeSection from '@/components/WhyMeSection';
 import HighlightedProject from '@/components/HighlightedProject';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const Index = () => {
+  useScrollReveal();
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />

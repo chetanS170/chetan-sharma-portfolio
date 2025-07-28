@@ -299,14 +299,65 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Intersection Observer for scroll animations */
+/* Scroll behavior and reveal animations */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll reveal animation */
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.scroll-reveal.revealed {
+.scroll-reveal.animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Enhanced scroll animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s ease-out forwards;
 }

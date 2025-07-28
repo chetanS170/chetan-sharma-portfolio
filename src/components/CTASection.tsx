@@ -74,23 +74,26 @@ const CTASection = () => {
         </div>
 
         <div className="relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="text-center mb-16 scroll-reveal">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Get Started in <span className="gradient-text">3 Simple Steps</span>
             </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             From initial brief to delivering your stunning thumbnails, the process is smooth and collaborative
           </p>
           </div>
 
           {/* Steps */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
                 <div 
                   key={step.number}
-                  className="relative text-center group"
+                  className="relative text-center group scroll-reveal px-4"
+                  style={{
+                    animationDelay: `${index * 0.2}s`
+                  }}
                 >
                   {/* Connection Line */}
                   {index < steps.length - 1 && (
@@ -122,11 +125,11 @@ const CTASection = () => {
 
           {/* Final CTA */}
           <div className="text-center">
-            <div className="glass-card p-8 lg:p-12 max-w-4xl mx-auto">
-              <h3 className="text-3xl lg:text-4xl font-bold mb-6">
+            <div className="glass-card p-6 sm:p-8 lg:p-12 max-w-4xl mx-auto scroll-reveal">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
                 Ready to Boost Your Click-Through Rate?
               </h3>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto px-4">
                 Join hundreds of successful content creators who've increased their views with 
                 eye-catching thumbnail designs. Let's create thumbnails that get clicked.
               </p>
@@ -137,10 +140,10 @@ const CTASection = () => {
                     <Button 
                       variant="electric" 
                       size="lg" 
-                      className="group px-12 py-6 text-xl font-bold"
+                      className="group px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-bold w-full sm:w-auto"
                     >
                       Start Your Project Now
-                      <Rocket className="ml-3 h-7 w-7 group-hover:translate-x-1 transition-transform" />
+                      <Rocket className="ml-2 sm:ml-3 h-5 sm:h-7 w-5 sm:w-7 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="max-w-2xl bg-background/95 backdrop-blur-xl border border-glass-border">
@@ -242,7 +245,7 @@ const CTASection = () => {
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex items-center justify-center gap-8 mt-8 text-sm text-muted-foreground">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full" />
                   <span>Free consultation</span>

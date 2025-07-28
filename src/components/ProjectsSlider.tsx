@@ -56,20 +56,20 @@ const ProjectsSlider = () => {
       <div className="container mx-auto px-6">
         {/* Featured Projects Slideshow */}
         <div className="mb-20">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-sparkle">
+          <div className="text-center mb-16 scroll-reveal">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-sparkle">
               Featured <span className="gradient-text">Projects</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Showcasing my latest high-converting thumbnail designs
             </p>
           </div>
 
           {/* Slideshow Container */}
-          <div className="relative max-w-6xl mx-auto overflow-hidden">
-            {/* Dark fade edges - improved positioning and coverage */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background via-background/95 via-background/60 to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background via-background/95 via-background/60 to-transparent z-20 pointer-events-none" />
+          <div className="relative w-full mx-auto overflow-hidden">
+            {/* Enhanced fade edges - covers entire viewport width */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 lg:w-48 bg-gradient-to-r from-background via-background/98 via-background/90 via-background/60 to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 lg:w-48 bg-gradient-to-l from-background via-background/98 via-background/90 via-background/60 to-transparent z-20 pointer-events-none" />
             
             <div className="overflow-hidden">
               <div 
@@ -79,7 +79,7 @@ const ProjectsSlider = () => {
                 }}
               >
                 {duplicatedProjects.map((project, index) => (
-                  <div key={`${project.id}-${index}`} className="flex-shrink-0 w-80">
+                  <div key={`${project.id}-${index}`} className="flex-shrink-0 w-64 sm:w-72 md:w-80">
                     <div 
                       className="relative overflow-hidden rounded-xl cursor-pointer group hover-lift"
                       onClick={() => setSelectedImage(project.image)}
@@ -105,9 +105,9 @@ const ProjectsSlider = () => {
         </div>
 
         {/* All Projects Grid */}
-        <div className="text-center mb-16">
-          <h3 className="text-3xl font-bold mb-4 text-sparkle">All Projects</h3>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <div className="text-center mb-16 scroll-reveal">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-sparkle">All Projects</h3>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Browse through my complete portfolio of thumbnail designs
           </p>
         </div>
@@ -116,14 +116,13 @@ const ProjectsSlider = () => {
           {projects.map((project, index) => (
             <div 
               key={`grid-${project.id}`} 
-              className="glass-card p-4 hover-lift group backdrop-blur-xl animate-fade-in"
+              className="glass-card p-3 sm:p-4 hover-lift group backdrop-blur-xl scroll-reveal"
               style={{ 
-                animationDelay: `${index * 0.1}s`,
-                animationFillMode: 'both'
+                animationDelay: `${index * 0.1}s`
               }}
             >
               <div 
-                className="relative overflow-hidden rounded-lg mb-4 cursor-pointer"
+                className="relative overflow-hidden rounded-lg cursor-pointer"
                 onClick={() => setSelectedImage(project.image)}
                 style={{ aspectRatio: '16/9' }}
               >
@@ -139,32 +138,25 @@ const ProjectsSlider = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="space-y-3">
-                <div className="flex flex-wrap gap-1">
-                  {project.tags.slice(0, 2).map((tag) => (
-                    <span 
-                      key={tag}
-                      className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20 animate-circle-outline"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 scroll-reveal">
           <Button 
             variant="vibrant" 
             size="lg"
-            onClick={() => navigate('/gallery')}
-            className="px-8 py-4 text-lg"
+            onClick={() => {
+              navigate('/gallery');
+              // Small delay to ensure navigation happens before scroll
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }, 50);
+            }}
+            className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
           >
             View All Projects
-            <ArrowRight className="ml-2 h-6 w-6" />
+            <ArrowRight className="ml-2 h-5 sm:h-6 w-5 sm:w-6" />
           </Button>
         </div>
 
