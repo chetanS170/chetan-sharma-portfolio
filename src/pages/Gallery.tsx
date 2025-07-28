@@ -4,6 +4,7 @@ import { ArrowLeft, Maximize2, X, Mail, Phone } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { useNavigate } from 'react-router-dom';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import logoImage from '@/assets/logo.png';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -11,55 +12,52 @@ const Gallery = () => {
   useScrollReveal();
 
   const thumbnails = [
+    // Featured slideshow thumbnails
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=450&fit=crop",
-      category: "Tech"
+      image: "/lovable-uploads/f67a2ea1-3098-496a-800e-c2fe7cc5062d.png",
+      category: "Music"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop",
-      category: "Lifestyle"
+      image: "/lovable-uploads/01058e33-6a13-4cef-a456-973de11f733d.png",
+      category: "Entertainment"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=450&fit=crop",
+      image: "/lovable-uploads/97d85109-7c99-4096-b299-9cbae2004ea7.png",
       category: "Education"
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=450&fit=crop",
-      category: "Fitness"
+      image: "/lovable-uploads/355df305-c794-4d86-b4ce-f5a8b3dd0954.png",
+      category: "Music"
     },
+    // Additional portfolio thumbnails
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=450&fit=crop",
-      category: "Travel"
+      image: "/lovable-uploads/86330dd7-9fb6-444d-ae6e-22730a35c50a.png",
+      category: "Comedy"
     },
     {
       id: 6,
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=450&fit=crop",
-      category: "Food"
+      image: "/lovable-uploads/8b7cac6f-22f0-41ec-8f66-5a251cca3415.png",
+      category: "Tech"
     },
     {
       id: 7,
-      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=450&fit=crop",
-      category: "Gaming"
-    },
-    {
-      id: 8,
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      category: "Business"
-    },
-    {
-      id: 9,
-      image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=450&fit=crop",
+      image: "/lovable-uploads/b4d503f4-0ebc-4c8e-a5d9-597bb81df823.png",
       category: "Music"
     },
     {
-      id: 10,
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=450&fit=crop",
-      category: "Art"
+      id: 8,
+      image: "/lovable-uploads/681285fb-bbd7-40cf-9a23-8b607dd2c350.png",
+      category: "News"
+    },
+    {
+      id: 9,
+      image: "/lovable-uploads/7fe6fbf5-08cf-4874-a482-35e09e9d5090.png",
+      category: "Entertainment"
     }
   ];
 
@@ -75,24 +73,28 @@ const Gallery = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass-header py-4">
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
           <Button
             variant="ghost"
             onClick={() => navigate('/')}
-            className="text-foreground hover:text-primary"
+            className="text-foreground hover:text-primary text-sm sm:text-base"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Portfolio
+            <ArrowLeft className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+            <span className="hidden sm:inline">Back to Portfolio</span>
+            <span className="sm:hidden">Back</span>
           </Button>
-          <div className="text-xl font-bold gradient-text">
-            Chetan Sharma
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <img src={logoImage} alt="Logo" className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg" />
+            <div className="text-lg sm:text-xl font-bold gradient-text">
+              Chetan Sharma
+            </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-1 sm:gap-2">
             <Button
               variant="outline"
               size="sm"
               onClick={handleEmailClick}
-              className="hidden sm:flex"
+              className="hidden md:flex"
             >
               <Mail className="mr-2 h-4 w-4" />
               Email
@@ -101,10 +103,27 @@ const Gallery = () => {
               variant="outline"
               size="sm"
               onClick={handleWhatsAppClick}
-              className="hidden sm:flex"
+              className="hidden md:flex"
             >
               <Phone className="mr-2 h-4 w-4" />
               WhatsApp
+            </Button>
+            {/* Mobile contact buttons */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleEmailClick}
+              className="md:hidden p-2"
+            >
+              <Mail className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleWhatsAppClick}
+              className="md:hidden p-2"
+            >
+              <Phone className="h-4 w-4" />
             </Button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import logoImage from '@/assets/logo.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,8 +29,11 @@ const Header = () => {
       isScrolled ? 'glass-header py-4' : 'py-6'
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="text-xl font-bold gradient-text">
-          Chetan Sharma
+        <div className="flex items-center space-x-3">
+          <img src={logoImage} alt="Logo" className="w-10 h-10 rounded-lg" />
+          <div className="text-xl font-bold gradient-text">
+            Chetan Sharma
+          </div>
         </div>
 
         {/* Desktop Navigation */}

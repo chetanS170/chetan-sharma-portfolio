@@ -8,47 +8,61 @@ const ProjectsSlider = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const projects = [
+  // Slideshow projects (4 images)
+  const slideshowProjects = [
+    {
+      id: 1,
+      title: "Kohram - Music Album",
+      image: "/lovable-uploads/f67a2ea1-3098-496a-800e-c2fe7cc5062d.png",
+    },
     {
       id: 2,
-      title: "Tech Review Series",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=450&fit=crop",
-      tags: ["Tech", "Reviews", "Minimalist"],
+      title: "Fazilpuria Firing",
+      image: "/lovable-uploads/01058e33-6a13-4cef-a456-973de11f733d.png",
     },
     {
       id: 3,
-      title: "Lifestyle Vlog Pack",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop",
-      tags: ["Lifestyle", "Vlogs", "Colorful"],
+      title: "Teachers vs Students",
+      image: "/lovable-uploads/97d85109-7c99-4096-b299-9cbae2004ea7.png",
     },
     {
       id: 4,
-      title: "Educational Series",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=450&fit=crop",
-      tags: ["Education", "Tutorials", "Clean"],
-    },
-    {
-      id: 5,
-      title: "Fitness Channel",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=450&fit=crop",
-      tags: ["Fitness", "Health", "Motivational"],
-    },
-    {
-      id: 6,
-      title: "Travel Vlogs",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=450&fit=crop",
-      tags: ["Travel", "Adventure", "Cinematic"],
-    },
-    {
-      id: 7,
-      title: "Food Reviews",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=450&fit=crop",
-      tags: ["Food", "Reviews", "Colorful"],
+      title: "Sumit x Karan x Aujla",
+      image: "/lovable-uploads/355df305-c794-4d86-b4ce-f5a8b3dd0954.png",
     },
   ];
 
-  // Create duplicated projects for infinite scroll
-  const duplicatedProjects = [...projects, ...projects];
+  // All projects grid (remaining images)
+  const allProjects = [
+    {
+      id: 5,
+      title: "Types of Monitors",
+      image: "/lovable-uploads/86330dd7-9fb6-444d-ae6e-22730a35c50a.png",
+    },
+    {
+      id: 6,
+      title: "YouTube Channel Closure",
+      image: "/lovable-uploads/8b7cac6f-22f0-41ec-8f66-5a251cca3415.png",
+    },
+    {
+      id: 7,
+      title: "Gaane Delete",
+      image: "/lovable-uploads/b4d503f4-0ebc-4c8e-a5d9-597bb81df823.png",
+    },
+    {
+      id: 8,
+      title: "Controversy Explained",
+      image: "/lovable-uploads/681285fb-bbd7-40cf-9a23-8b607dd2c350.png",
+    },
+    {
+      id: 9,
+      title: "Bigg Boss Collab",
+      image: "/lovable-uploads/7fe6fbf5-08cf-4874-a482-35e09e9d5090.png",
+    },
+  ];
+
+  // Create duplicated slideshow projects for infinite scroll
+  const duplicatedSlideshowProjects = [...slideshowProjects, ...slideshowProjects];
 
 
   return (
@@ -75,10 +89,10 @@ const ProjectsSlider = () => {
               <div 
                 className="flex gap-6 animate-scroll-smooth"
                 style={{
-                  width: `${duplicatedProjects.length * 320}px`,
+                  width: `${duplicatedSlideshowProjects.length * 320}px`,
                 }}
               >
-                {duplicatedProjects.map((project, index) => (
+                {duplicatedSlideshowProjects.map((project, index) => (
                   <div key={`${project.id}-${index}`} className="flex-shrink-0 w-64 sm:w-72 md:w-80">
                     <div 
                       className="relative overflow-hidden rounded-xl cursor-pointer group hover-lift"
@@ -87,7 +101,7 @@ const ProjectsSlider = () => {
                     >
                       <img 
                         src={project.image} 
-                        alt={`Thumbnail ${project.id}`}
+                        alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -113,7 +127,7 @@ const ProjectsSlider = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {allProjects.map((project, index) => (
             <div 
               key={`grid-${project.id}`} 
               className="glass-card p-3 sm:p-4 hover-lift group backdrop-blur-xl scroll-reveal"
@@ -128,7 +142,7 @@ const ProjectsSlider = () => {
               >
                 <img 
                   src={project.image} 
-                  alt={`Thumbnail ${project.id}`}
+                  alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

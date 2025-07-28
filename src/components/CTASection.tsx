@@ -150,95 +150,52 @@ const CTASection = () => {
                     <div className="p-6">
                       <h3 className="text-2xl font-bold mb-6 text-center gradient-text">Let's Create Amazing Thumbnails Together!</h3>
                       
-                      {/* Quick Contact Options */}
-                      <div className="grid grid-cols-2 gap-4 mb-6">
-                        <Button 
-                          variant="outline" 
+                      {/* Contact Cards Only */}
+                      <div className="space-y-6">
+                        {/* Email Card */}
+                        <div 
                           onClick={handleEmailClick}
-                          className="h-auto p-4 flex flex-col items-center gap-2 bg-primary/5 hover:bg-primary/10 border-primary/30"
+                          className="glass-card p-6 sm:p-8 cursor-pointer hover-lift group relative overflow-hidden"
                         >
-                          <Mail className="h-6 w-6 text-primary" />
-                          <span className="text-sm">Email Me Directly</span>
-                          <span className="text-xs text-muted-foreground">chetansharma44170@gmail.com</span>
-                        </Button>
-                        <Button 
-                          variant="outline" 
+                          <div className="absolute top-4 right-4">
+                            <div className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full">
+                              PREFERRED
+                            </div>
+                          </div>
+                          <div className="flex items-center space-x-4">
+                            <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <Mail className="h-8 w-8 text-white" />
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-xl sm:text-2xl font-bold mb-2">Email Me Directly</h3>
+                              <p className="text-lg sm:text-xl text-primary font-semibold">chetansharma44170@gmail.com</p>
+                              <p className="text-sm text-muted-foreground mt-1">Get a response within 24 hours</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* WhatsApp Card */}
+                        <div 
                           onClick={handleWhatsAppClick}
-                          className="h-auto p-4 flex flex-col items-center gap-2 bg-secondary/5 hover:bg-secondary/10 border-secondary/30"
+                          className="glass-card p-6 sm:p-8 cursor-pointer hover-lift group relative overflow-hidden"
                         >
-                          <Phone className="h-6 w-6 text-secondary" />
-                          <span className="text-sm">WhatsApp Chat</span>
-                          <span className="text-xs text-muted-foreground">+91 9870859103</span>
-                        </Button>
-                      </div>
-
-                      <div className="relative">
-                        <div className="absolute inset-0 flex items-center">
-                          <span className="w-full border-t border-muted-foreground/20" />
-                        </div>
-                        <div className="relative flex justify-center text-xs uppercase">
-                          <span className="bg-background px-2 text-muted-foreground">Or fill the form below</span>
-                        </div>
-                      </div>
-
-                      {/* Contact Form */}
-                      <form onSubmit={handleSubmit} className="space-y-4 mt-6">
-                        <div className="grid grid-cols-2 gap-4">
-                          <div>
-                            <Label htmlFor="name">Name</Label>
-                            <Input
-                              id="name"
-                              name="name"
-                              value={formData.name}
-                              onChange={handleInputChange}
-                              required
-                              className="bg-background/50"
-                            />
+                          <div className="absolute top-4 right-4">
+                            <div className="bg-secondary/20 text-secondary text-xs font-bold px-3 py-1 rounded-full">
+                              INSTANT
+                            </div>
                           </div>
-                          <div>
-                            <Label htmlFor="email">Email</Label>
-                            <Input
-                              id="email"
-                              name="email"
-                              type="email"
-                              value={formData.email}
-                              onChange={handleInputChange}
-                              required
-                              className="bg-background/50"
-                            />
+                          <div className="flex items-center space-x-4">
+                            <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/70 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <Phone className="h-8 w-8 text-white" />
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-xl sm:text-2xl font-bold mb-2">WhatsApp Chat</h3>
+                              <p className="text-lg sm:text-xl text-secondary font-semibold">+91 9870859103</p>
+                              <p className="text-sm text-muted-foreground mt-1">Quick chat for urgent projects</p>
+                            </div>
                           </div>
                         </div>
-                        <div>
-                          <Label htmlFor="projectType">Project Type</Label>
-                          <Input
-                            id="projectType"
-                            name="projectType"
-                            placeholder="e.g., YouTube thumbnails, podcast covers, etc."
-                            value={formData.projectType}
-                            onChange={handleInputChange}
-                            className="bg-background/50"
-                          />
-                        </div>
-                        <div>
-                          <Label htmlFor="message">Project Details</Label>
-                          <Textarea
-                            id="message"
-                            name="message"
-                            placeholder="Tell me about your project, style preferences, timeline, etc."
-                            value={formData.message}
-                            onChange={handleInputChange}
-                            rows={4}
-                            className="bg-background/50"
-                          />
-                        </div>
-                        <Button 
-                          type="submit" 
-                          className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80"
-                        >
-                          <Send className="mr-2 h-4 w-4" />
-                          Send Now
-                        </Button>
-                      </form>
+                      </div>
                     </div>
                   </DialogContent>
                 </Dialog>
