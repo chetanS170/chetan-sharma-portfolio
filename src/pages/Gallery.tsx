@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { ArrowLeft, Maximize2, X, Mail, Phone } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { useNavigate } from 'react-router-dom';
@@ -74,15 +74,14 @@ const Gallery = () => {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass-header py-4">
         <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
-          <Button
-            variant="ghost"
+          <GradientButton
             onClick={() => navigate('/')}
-            className="text-foreground hover:text-primary text-sm sm:text-base"
+            className="text-foreground hover:text-primary text-sm sm:text-base px-4 py-2"
           >
             <ArrowLeft className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
             <span className="hidden sm:inline">Back to Portfolio</span>
             <span className="sm:hidden">Back</span>
-          </Button>
+          </GradientButton>
           <div className="flex items-center space-x-2 sm:space-x-3">
             <img src={logoImage} alt="Logo" className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg" />
             <div className="text-lg sm:text-xl font-bold gradient-text">
@@ -90,41 +89,35 @@ const Gallery = () => {
             </div>
           </div>
           <div className="flex gap-1 sm:gap-2">
-            <Button
-              variant="outline"
-              size="sm"
+            <GradientButton
               onClick={handleEmailClick}
-              className="hidden md:flex"
+              className="hidden md:flex text-sm px-4 py-2"
             >
               <Mail className="mr-2 h-4 w-4" />
               Email
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
+            </GradientButton>
+            <GradientButton
+              variant="variant"
               onClick={handleWhatsAppClick}
-              className="hidden md:flex"
+              className="hidden md:flex text-sm px-4 py-2"
             >
               <Phone className="mr-2 h-4 w-4" />
               WhatsApp
-            </Button>
+            </GradientButton>
             {/* Mobile contact buttons */}
-            <Button
-              variant="outline"
-              size="sm"
+            <GradientButton
               onClick={handleEmailClick}
               className="md:hidden p-2"
             >
               <Mail className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
+            </GradientButton>
+            <GradientButton
+              variant="variant"
               onClick={handleWhatsAppClick}
               className="md:hidden p-2"
             >
               <Phone className="h-4 w-4" />
-            </Button>
+            </GradientButton>
           </div>
         </div>
       </header>
@@ -188,21 +181,21 @@ const Gallery = () => {
                 Let's work together to create thumbnails that will boost your click-through rates
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
+                <GradientButton
                   onClick={handleEmailClick}
-                  className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80"
+                  className="px-6 py-3"
                 >
                   <Mail className="mr-2 h-4 w-4" />
                   Email: chetansharma44170@gmail.com
-                </Button>
-                <Button
-                  variant="outline"
+                </GradientButton>
+                <GradientButton
+                  variant="variant"
                   onClick={handleWhatsAppClick}
-                  className="border-primary/30 hover:border-primary/50"
+                  className="px-6 py-3"
                 >
                   <Phone className="mr-2 h-4 w-4" />
                   WhatsApp: +91 9870859103
-                </Button>
+                </GradientButton>
               </div>
             </div>
           </div>

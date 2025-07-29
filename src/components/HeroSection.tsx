@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { ArrowRight, Play } from 'lucide-react';
 import heroImage from '@/assets/hero-workspace.jpg';
 import profilePhoto from '@/assets/profile-photo.jpg';
@@ -63,19 +63,18 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button variant="electric" size="lg" className="group px-8 py-4 text-lg">
+            <GradientButton className="group px-8 py-4 text-lg">
               Get in Touch
               <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="vibrant" 
-              size="lg" 
+            </GradientButton>
+            <GradientButton 
+              variant="variant"
               className="group px-8 py-4 text-lg"
               onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Play className="mr-2 h-6 w-6" />
               See My Work
-            </Button>
+            </GradientButton>
           </div>
 
         </div>
