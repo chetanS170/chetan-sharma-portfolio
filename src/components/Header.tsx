@@ -28,8 +28,7 @@ const Header = () => {
       isScrolled ? 'glass-header py-4' : 'py-6'
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <img src="https://i.imgur.com/your-logo-url.png" alt="Logo" className="w-10 h-10 rounded-full" />
+        <div className="flex items-center">
           <div className="text-xl font-bold gradient-text">
             Chetan Sharma
           </div>
