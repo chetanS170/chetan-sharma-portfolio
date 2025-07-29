@@ -1,6 +1,7 @@
 import { GradientButton } from '@/components/ui/gradient-button';
 import { ArrowRight, Play } from 'lucide-react';
 import heroImage from '@/assets/hero-workspace.jpg';
+import newLogo from '@/assets/new-logo.png';
 
 const HeroSection = () => {
   return (
@@ -38,8 +39,8 @@ const HeroSection = () => {
             <div className="relative">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 neon-glow floating">
                 <img 
-                  src="https://i.imgur.com/your-logo-url.png" 
-                  alt="Creative Designer" 
+                  src={newLogo} 
+                  alt="Creative Designer Logo" 
                   className="w-full h-full object-cover"
                 />
               </div>
