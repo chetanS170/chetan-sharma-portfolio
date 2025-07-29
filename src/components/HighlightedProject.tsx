@@ -14,8 +14,8 @@ const HighlightedProject = () => {
   return (
     <section className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="glass-card p-8 lg:p-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="glass-card p-6 sm:p-8 lg:p-12">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Project Image */}
             <div className="relative group">
               <div className="relative overflow-hidden rounded-2xl">
@@ -32,13 +32,13 @@ const HighlightedProject = () => {
             </div>
 
             {/* Project Details */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <p className="text-primary font-medium mb-2">FEATURED PACK</p>
-                <h3 className="text-3xl lg:text-4xl font-bold mb-4">
+                <p className="text-primary font-medium mb-2 text-sm sm:text-base">FEATURED PACK</p>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
                   Gaming Thumbnail Pack
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                   A complete gaming thumbnail collection with 20+ high-converting designs. 
                   Perfect for gaming content creators ready to boost their CTR and grow their 
                   channel with professional-grade thumbnails.
@@ -46,13 +46,13 @@ const HighlightedProject = () => {
               </div>
 
               {/* Features List */}
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center">
-                      <Check className="h-4 w-4 text-primary" />
+                    <div className="w-5 sm:w-6 h-5 sm:h-6 bg-primary/20 rounded-full flex items-center justify-center">
+                      <Check className="h-3 sm:h-4 w-3 sm:w-4 text-primary" />
                     </div>
-                    <span className="text-foreground">{feature}</span>
+                    <span className="text-sm sm:text-base text-foreground">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -70,18 +70,18 @@ const HighlightedProject = () => {
               </div>
 
               {/* Pricing */}
-              <div className="glass-card p-6 border-primary/20">
+              <div className="glass-card p-4 sm:p-6 border-primary/20">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground">Pack price</p>
-                    <p className="text-2xl font-bold">
+                    <p className="text-xs sm:text-sm text-muted-foreground">Pack price</p>
+                    <p className="text-xl sm:text-2xl font-bold">
                       <span className="gradient-text">$49</span>
-                      <span className="text-sm text-muted-foreground ml-2">one-time</span>
+                      <span className="text-xs sm:text-sm text-muted-foreground ml-2">one-time</span>
                     </p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-muted-foreground">Save 40%</p>
-                    <p className="text-sm line-through text-muted-foreground">$99</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Save 40%</p>
+                    <p className="text-xs sm:text-sm line-through text-muted-foreground">$99</p>
                   </div>
                 </div>
               </div>

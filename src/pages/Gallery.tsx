@@ -4,7 +4,6 @@ import { ArrowLeft, Maximize2, X, Mail, Phone } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { useNavigate } from 'react-router-dom';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import logoImage from '@/assets/logo.png';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -76,47 +75,44 @@ const Gallery = () => {
         <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
           <GradientButton
             onClick={() => navigate('/')}
-            className="text-foreground hover:text-primary text-sm sm:text-base px-4 py-2"
+            className="text-foreground hover:text-primary text-xs sm:text-sm md:text-base px-3 sm:px-4 py-2"
           >
             <ArrowLeft className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
             <span className="hidden sm:inline">Back to Portfolio</span>
             <span className="sm:hidden">Back</span>
           </GradientButton>
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <img src={logoImage} alt="Logo" className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg" />
-            <div className="text-lg sm:text-xl font-bold gradient-text">
-              Chetan Sharma
-            </div>
+          <div className="text-lg sm:text-xl font-bold gradient-text">
+            Chetan Sharma
           </div>
           <div className="flex gap-1 sm:gap-2">
             <GradientButton
               onClick={handleEmailClick}
-              className="hidden md:flex text-sm px-4 py-2"
+              className="hidden md:flex text-xs md:text-sm px-3 md:px-4 py-2"
             >
-              <Mail className="mr-2 h-4 w-4" />
+              <Mail className="mr-1 md:mr-2 h-3 md:h-4 w-3 md:w-4" />
               Email
             </GradientButton>
             <GradientButton
               variant="variant"
               onClick={handleWhatsAppClick}
-              className="hidden md:flex text-sm px-4 py-2"
+              className="hidden md:flex text-xs md:text-sm px-3 md:px-4 py-2"
             >
-              <Phone className="mr-2 h-4 w-4" />
+              <Phone className="mr-1 md:mr-2 h-3 md:h-4 w-3 md:w-4" />
               WhatsApp
             </GradientButton>
             {/* Mobile contact buttons */}
             <GradientButton
               onClick={handleEmailClick}
-              className="md:hidden p-2"
+              className="md:hidden p-1.5 sm:p-2"
             >
-              <Mail className="h-4 w-4" />
+              <Mail className="h-3 sm:h-4 w-3 sm:w-4" />
             </GradientButton>
             <GradientButton
               variant="variant"
               onClick={handleWhatsAppClick}
-              className="md:hidden p-2"
+              className="md:hidden p-1.5 sm:p-2"
             >
-              <Phone className="h-4 w-4" />
+              <Phone className="h-3 sm:h-4 w-3 sm:w-4" />
             </GradientButton>
           </div>
         </div>
@@ -183,18 +179,20 @@ const Gallery = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <GradientButton
                   onClick={handleEmailClick}
-                  className="px-6 py-3"
+                  className="px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base"
                 >
-                  <Mail className="mr-2 h-4 w-4" />
-                  Email: chetansharma44170@gmail.com
+                  <Mail className="mr-2 h-3 sm:h-4 w-3 sm:w-4" />
+                  <span className="hidden sm:inline">Email: chetansharma44170@gmail.com</span>
+                  <span className="sm:hidden">Email Me</span>
                 </GradientButton>
                 <GradientButton
                   variant="variant"
                   onClick={handleWhatsAppClick}
-                  className="px-6 py-3"
+                  className="px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base"
                 >
-                  <Phone className="mr-2 h-4 w-4" />
-                  WhatsApp: +91 9870859103
+                  <Phone className="mr-2 h-3 sm:h-4 w-3 sm:w-4" />
+                  <span className="hidden sm:inline">WhatsApp: +91 9870859103</span>
+                  <span className="sm:hidden">WhatsApp</span>
                 </GradientButton>
               </div>
             </div>

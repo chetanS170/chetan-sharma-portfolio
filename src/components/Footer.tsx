@@ -30,14 +30,14 @@ const Footer = () => {
     <footer className="relative py-20 mt-20">
       <div className="container mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="glass-card p-8 lg:p-12 mb-8">
-          <div className="grid lg:grid-cols-4 gap-12">
+        <div className="glass-card p-6 sm:p-8 lg:p-12 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
             {/* Brand Section */}
-            <div className="lg:col-span-1">
-              <div className="text-2xl font-bold gradient-text mb-4">
+            <div className="sm:col-span-2 lg:col-span-1">
+              <div className="text-xl sm:text-2xl font-bold gradient-text mb-4">
                 Chetan Sharma
               </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground mb-6 leading-relaxed">
                 Creating eye-catching thumbnails that boost click-through rates and grow your audience. 
                 Let's make your content stand out together.
               </p>
@@ -60,13 +60,13 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold text-lg mb-6">Quick Links</h4>
-              <div className="space-y-3">
+              <h4 className="font-semibold text-base sm:text-lg mb-4 sm:mb-6">Quick Links</h4>
+              <div className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="block text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -76,12 +76,12 @@ const Footer = () => {
 
             {/* Services */}
             <div>
-              <h4 className="font-semibold text-lg mb-6">Services</h4>
-              <div className="space-y-3">
+              <h4 className="font-semibold text-base sm:text-lg mb-4 sm:mb-6">Services</h4>
+              <div className="space-y-2 sm:space-y-3">
                 {services.map((service) => (
                   <div
                     key={service}
-                    className="text-muted-foreground"
+                    className="text-sm sm:text-base text-muted-foreground"
                   >
                     {service}
                   </div>
@@ -91,13 +91,13 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-semibold text-lg mb-6">Contact</h4>
-              <div className="space-y-4">
+              <h4 className="font-semibold text-base sm:text-lg mb-4 sm:mb-6">Contact</h4>
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
                   <button 
                     onClick={() => window.location.href = 'mailto:chetansharma44170@gmail.com?subject=Thumbnail Design Inquiry'}
-                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer break-all"
                   >
                     chetansharma44170@gmail.com
                   </button>
@@ -106,14 +106,14 @@ const Footer = () => {
                   <Phone className="h-5 w-5 text-primary" />
                   <button 
                     onClick={() => window.open('https://wa.me/919870859103?text=Hi%20Chetan,%20I%27m%20interested%20in%20your%20thumbnail%20design%20services', '_blank')}
-                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                   >
                     +91 9870859103
                   </button>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span className="text-muted-foreground">India</span>
+                  <span className="text-sm sm:text-base text-muted-foreground">India</span>
                 </div>
               </div>
             </div>
