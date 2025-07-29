@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Menu, X } from 'lucide-react';
-import logoImage from '@/assets/logo.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +29,7 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <img src={logoImage} alt="Logo" className="w-10 h-10 rounded-lg" />
+          <img src="https://i.imgur.com/your-logo-url.png" alt="Logo" className="w-10 h-10 rounded-full" />
           <div className="text-xl font-bold gradient-text">
             Chetan Sharma
           </div>
