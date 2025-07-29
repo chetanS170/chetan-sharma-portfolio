@@ -33,19 +33,7 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Profile Photo */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 neon-glow floating">
-                <img 
-                  src="https://i.imgur.com/your-logo-url.png" 
-                  alt="Creative Designer" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-20 animate-pulse" />
-            </div>
-          </div>
+
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-sparkle">
