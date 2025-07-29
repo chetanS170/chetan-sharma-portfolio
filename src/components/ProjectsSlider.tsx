@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { ExternalLink, ArrowRight, X, Maximize2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useNavigate } from 'react-router-dom';
@@ -81,9 +81,9 @@ const ProjectsSlider = () => {
 
           {/* Slideshow Container */}
           <div className="relative w-full mx-auto overflow-hidden">
-            {/* Enhanced fade edges - covers entire viewport width */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 lg:w-48 bg-gradient-to-r from-background via-background/98 via-background/90 via-background/60 to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 lg:w-48 bg-gradient-to-l from-background via-background/98 via-background/90 via-background/60 to-transparent z-20 pointer-events-none" />
+            {/* Enhanced fade edges - improved responsive coverage */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 md:w-40 lg:w-56 xl:w-64 bg-gradient-to-r from-background via-background/95 via-background/80 via-background/50 to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 md:w-40 lg:w-56 xl:w-64 bg-gradient-to-l from-background via-background/95 via-background/80 via-background/50 to-transparent z-20 pointer-events-none" />
             
             <div className="overflow-hidden">
               <div 
@@ -157,9 +157,7 @@ const ProjectsSlider = () => {
         </div>
 
         <div className="text-center mt-12 scroll-reveal">
-          <Button 
-            variant="vibrant" 
-            size="lg"
+          <GradientButton 
             onClick={() => {
               navigate('/gallery');
               // Small delay to ensure navigation happens before scroll
@@ -171,7 +169,7 @@ const ProjectsSlider = () => {
           >
             View All Projects
             <ArrowRight className="ml-2 h-5 sm:h-6 w-5 sm:w-6" />
-          </Button>
+          </GradientButton>
         </div>
 
         {/* Image Modal */}

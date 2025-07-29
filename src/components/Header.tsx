@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { Menu, X } from 'lucide-react';
 import logoImage from '@/assets/logo.png';
 
@@ -50,9 +50,9 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:block">
-          <Button variant="glow" size="sm">
+          <GradientButton className="text-sm px-6 py-2">
             Get in Touch
-          </Button>
+          </GradientButton>
         </div>
 
         {/* Mobile Menu Button */}
@@ -78,9 +78,9 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="glow" className="mt-4">
+            <GradientButton className="mt-4">
               Get in Touch
-            </Button>
+            </GradientButton>
           </nav>
         </div>
       )}

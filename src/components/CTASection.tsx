@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { MessageCircle, Palette, Rocket, Mail, Phone, Send } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
@@ -137,14 +137,10 @@ const CTASection = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
                   <DialogTrigger asChild>
-                    <Button 
-                      variant="electric" 
-                      size="lg" 
-                      className="group px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-bold w-full sm:w-auto"
-                    >
+                    <GradientButton className="group px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-bold w-full sm:w-auto">
                       Start Your Project Now
                       <Rocket className="ml-2 sm:ml-3 h-5 sm:h-7 w-5 sm:w-7 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    </GradientButton>
                   </DialogTrigger>
                   <DialogContent className="max-w-2xl bg-background/95 backdrop-blur-xl border border-glass-border">
                     <div className="p-6">

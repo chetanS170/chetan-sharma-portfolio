@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { Gift, Video, Star, Clock } from 'lucide-react';
 
 const BonusSection = () => {
@@ -94,9 +94,9 @@ const BonusSection = () => {
             <p className="text-muted-foreground mb-6">
               These bonuses are included free when you order your thumbnail pack this month
             </p>
-            <Button variant="premium" size="lg">
+            <GradientButton variant="variant" className="text-lg px-8 py-4">
               Claim Your Bonuses
-            </Button>
+            </GradientButton>
           </div>
         </div>
       </div>
