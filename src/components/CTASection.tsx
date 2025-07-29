@@ -137,35 +137,35 @@ const CTASection = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
                   <DialogTrigger asChild>
-                    <GradientButton className="group px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-bold w-full sm:w-auto">
+                    <GradientButton className="group px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-6 text-base sm:text-lg md:text-xl font-bold w-full sm:w-auto">
                       Start Your Project Now
-                      <Rocket className="ml-2 sm:ml-3 h-5 sm:h-7 w-5 sm:w-7 group-hover:translate-x-1 transition-transform" />
+                      <Rocket className="ml-2 sm:ml-3 h-4 sm:h-5 md:h-7 w-4 sm:w-5 md:w-7 group-hover:translate-x-1 transition-transform" />
                     </GradientButton>
                   </DialogTrigger>
                   <DialogContent className="max-w-2xl bg-background/95 backdrop-blur-xl border border-glass-border">
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-6 text-center gradient-text">Let's Create Amazing Thumbnails Together!</h3>
+                    <div className="p-4 sm:p-6">
+                      <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6 text-center gradient-text">Let's Create Amazing Thumbnails Together!</h3>
                       
                       {/* Contact Cards Only */}
-                      <div className="space-y-6">
+                      <div className="space-y-3 sm:space-y-6">
                         {/* Email Card */}
                         <div 
                           onClick={handleEmailClick}
-                          className="glass-card p-6 sm:p-8 cursor-pointer hover-lift group relative overflow-hidden"
+                          className="glass-card p-3 sm:p-6 md:p-8 cursor-pointer hover-lift group relative overflow-hidden"
                         >
-                          <div className="absolute top-4 right-4">
-                            <div className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full">
+                          <div className="absolute top-2 right-2 sm:top-4 sm:right-4">
+                            <div className="bg-primary/20 text-primary text-xs font-bold px-2 py-1 sm:px-3 sm:py-1 rounded-full">
                               PREFERRED
                             </div>
                           </div>
-                          <div className="flex items-center space-x-4">
-                            <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                              <Mail className="h-8 w-8 text-white" />
+                          <div className="flex items-center space-x-3 sm:space-x-4">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-primary/70 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                             </div>
-                            <div className="flex-1">
-                              <h3 className="text-xl sm:text-2xl font-bold mb-2">Email Me Directly</h3>
-                              <p className="text-lg sm:text-xl text-primary font-semibold">chetansharma44170@gmail.com</p>
-                              <p className="text-sm text-muted-foreground mt-1">Get a response within 24 hours</p>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-base sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">Email Me Directly</h3>
+                              <p className="text-sm sm:text-lg md:text-xl text-primary font-semibold break-all">chetansharma44170@gmail.com</p>
+                              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Get a response within 24 hours</p>
                             </div>
                           </div>
                         </div>
@@ -173,21 +173,21 @@ const CTASection = () => {
                         {/* WhatsApp Card */}
                         <div 
                           onClick={handleWhatsAppClick}
-                          className="glass-card p-6 sm:p-8 cursor-pointer hover-lift group relative overflow-hidden"
+                          className="glass-card p-3 sm:p-6 md:p-8 cursor-pointer hover-lift group relative overflow-hidden"
                         >
-                          <div className="absolute top-4 right-4">
-                            <div className="bg-secondary/20 text-secondary text-xs font-bold px-3 py-1 rounded-full">
+                          <div className="absolute top-2 right-2 sm:top-4 sm:right-4">
+                            <div className="bg-secondary/20 text-secondary text-xs font-bold px-2 py-1 sm:px-3 sm:py-1 rounded-full">
                               INSTANT
                             </div>
                           </div>
-                          <div className="flex items-center space-x-4">
-                            <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/70 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                              <Phone className="h-8 w-8 text-white" />
+                          <div className="flex items-center space-x-3 sm:space-x-4">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-secondary to-secondary/70 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                             </div>
-                            <div className="flex-1">
-                              <h3 className="text-xl sm:text-2xl font-bold mb-2">WhatsApp Chat</h3>
-                              <p className="text-lg sm:text-xl text-secondary font-semibold">+91 9870859103</p>
-                              <p className="text-sm text-muted-foreground mt-1">Quick chat for urgent projects</p>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="text-base sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">WhatsApp Chat</h3>
+                              <p className="text-sm sm:text-lg md:text-xl text-secondary font-semibold">+91 9870859103</p>
+                              <p className="text-xs sm:text-sm text-muted-foreground mt-1">Quick chat for urgent projects</p>
                             </div>
                           </div>
                         </div>

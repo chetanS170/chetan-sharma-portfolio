@@ -94,7 +94,7 @@ const BonusSection = () => {
             <p className="text-muted-foreground mb-6">
               These bonuses are included free when you order your thumbnail pack this month
             </p>
-            <GradientButton variant="variant" className="text-lg px-8 py-4">
+            <GradientButton variant="variant" className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
               Claim Your Bonuses
             </GradientButton>
           </div>

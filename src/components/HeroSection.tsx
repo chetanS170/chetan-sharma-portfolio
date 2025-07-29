@@ -36,30 +36,30 @@ const HeroSection = () => {
 
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-sparkle">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-sparkle px-4">
             I design thumbnails that{' '}
             <span className="gradient-text">turn your views</span>{' '}
             into clicks
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto text-balance">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto text-balance px-4">
             Eye-catching thumbnail designs that boost your click-through rates and grow your audience. 
             Ready to transform your content performance?
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <GradientButton className="group px-8 py-4 text-lg">
+            <GradientButton className="group px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto">
               Get in Touch
-              <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-4 sm:h-6 w-4 sm:w-6 group-hover:translate-x-1 transition-transform" />
             </GradientButton>
             <GradientButton 
               variant="variant"
-              className="group px-8 py-4 text-lg"
+              className="group px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
               onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <Play className="mr-2 h-6 w-6" />
+              <Play className="mr-2 h-4 sm:h-6 w-4 sm:w-6" />
               See My Work
             </GradientButton>
           </div>
