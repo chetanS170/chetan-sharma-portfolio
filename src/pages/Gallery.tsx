@@ -14,68 +14,88 @@ const Gallery = () => {
     // New featured thumbnails at the top
     {
       id: 1,
+      image: "/lovable-uploads/04c84261-f48d-4c79-a088-a12ca0109316.png",
+      category: "Comedy"
+    },
+    {
+      id: 2,
+      image: "/lovable-uploads/c944a8bc-9cb2-469a-9db3-3bf0f1d7ae09.png",
+      category: "Comedy"
+    },
+    {
+      id: 3,
+      image: "/lovable-uploads/ab46723d-0e51-4091-ab43-87c13e6b77a4.png",
+      category: "News"
+    },
+    {
+      id: 4,
+      image: "/lovable-uploads/b9893999-6bc0-4228-a277-545d3b0155a7.png",
+      category: "Comedy"
+    },
+    {
+      id: 5,
       image: "/lovable-uploads/9d7928e7-1896-4956-a94d-c76a7c9b30d5.png",
       category: "Tech"
     },
     {
-      id: 2,
+      id: 6,
       image: "/lovable-uploads/8a083741-40b8-4d83-8e87-4613d9d59eda.png",
       category: "Finance"
     },
     {
-      id: 3,
+      id: 7,
       image: "/lovable-uploads/ad5f59da-961c-4a3e-bf03-85941c87cf7e.png",
       category: "Tech"
     },
     {
-      id: 4,
+      id: 8,
       image: "/lovable-uploads/3dc16463-9a74-490c-b7c4-9f3c8d33d6b0.png",
       category: "Entertainment"
     },
     // Previous featured thumbnails
     {
-      id: 5,
+      id: 9,
       image: "/lovable-uploads/f67a2ea1-3098-496a-800e-c2fe7cc5062d.png",
       category: "Music"
     },
     {
-      id: 6,
+      id: 10,
       image: "/lovable-uploads/01058e33-6a13-4cef-a456-973de11f733d.png",
       category: "Entertainment"
     },
     {
-      id: 7,
+      id: 11,
       image: "/lovable-uploads/97d85109-7c99-4096-b299-9cbae2004ea7.png",
       category: "Education"
     },
     {
-      id: 8,
+      id: 12,
       image: "/lovable-uploads/355df305-c794-4d86-b4ce-f5a8b3dd0954.png",
       category: "Music"
     },
     // Additional portfolio thumbnails
     {
-      id: 9,
+      id: 13,
       image: "/lovable-uploads/86330dd7-9fb6-444d-ae6e-22730a35c50a.png",
       category: "Comedy"
     },
     {
-      id: 10,
+      id: 14,
       image: "/lovable-uploads/8b7cac6f-22f0-41ec-8f66-5a251cca3415.png",
       category: "Tech"
     },
     {
-      id: 11,
+      id: 15,
       image: "/lovable-uploads/b4d503f4-0ebc-4c8e-a5d9-597bb81df823.png",
       category: "Music"
     },
     {
-      id: 12,
+      id: 16,
       image: "/lovable-uploads/681285fb-bbd7-40cf-9a23-8b607dd2c350.png",
       category: "News"
     },
     {
-      id: 13,
+      id: 17,
       image: "/lovable-uploads/7fe6fbf5-08cf-4874-a482-35e09e9d5090.png",
       category: "Entertainment"
     }
@@ -153,11 +173,11 @@ const Gallery = () => {
           </div>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mb-12">
             {thumbnails.map((thumbnail, index) => (
               <div
                 key={thumbnail.id}
-                className="glass-card p-3 sm:p-4 hover-lift group scroll-reveal"
+                className="glass-card p-1.5 sm:p-2 hover-lift group scroll-reveal"
                 style={{
                   animationDelay: `${index * 0.1}s`
                 }}
@@ -177,11 +197,6 @@ const Gallery = () => {
                     <div className="w-8 h-8 bg-primary/20 backdrop-blur-md rounded-full flex items-center justify-center">
                       <Maximize2 className="h-4 w-4 text-primary" />
                     </div>
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <span className="px-2 py-1 text-xs font-medium bg-primary/20 text-primary rounded-full border border-primary/30 backdrop-blur-sm animate-circle-outline">
-                      {thumbnail.category}
-                    </span>
                   </div>
                 </div>
               </div>
