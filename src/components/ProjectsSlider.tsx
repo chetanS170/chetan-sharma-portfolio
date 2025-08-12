@@ -12,50 +12,92 @@ const ProjectsSlider = () => {
   const slideshowProjects = [
     {
       id: 1,
-      title: "Kohram - Music Album",
-      image: "/lovable-uploads/f67a2ea1-3098-496a-800e-c2fe7cc5062d.png",
+      title: "Vibe Coding for DevOps",
+      image: "/lovable-uploads/9d7928e7-1896-4956-a94d-c76a7c9b30d5.png",
     },
     {
       id: 2,
-      title: "Fazilpuria Firing",
-      image: "/lovable-uploads/01058e33-6a13-4cef-a456-973de11f733d.png",
+      title: "Money Speaks",
+      image: "/lovable-uploads/8a083741-40b8-4d83-8e87-4613d9d59eda.png",
     },
     {
       id: 3,
-      title: "Teachers vs Students",
-      image: "/lovable-uploads/97d85109-7c99-4096-b299-9cbae2004ea7.png",
+      title: "PayPal Strategy",
+      image: "/lovable-uploads/ad5f59da-961c-4a3e-bf03-85941c87cf7e.png",
     },
     {
       id: 4,
-      title: "Sumit x Karan x Aujla",
-      image: "/lovable-uploads/355df305-c794-4d86-b4ce-f5a8b3dd0954.png",
+      title: "Collab Missing",
+      image: "/lovable-uploads/3dc16463-9a74-490c-b7c4-9f3c8d33d6b0.png",
     },
   ];
 
   // All projects grid (remaining images)
   const allProjects = [
+    // New featured images at the top
     {
       id: 5,
+      title: "Vibe Coding for DevOps",
+      image: "/lovable-uploads/9d7928e7-1896-4956-a94d-c76a7c9b30d5.png",
+    },
+    {
+      id: 6,
+      title: "Money Speaks",
+      image: "/lovable-uploads/8a083741-40b8-4d83-8e87-4613d9d59eda.png",
+    },
+    {
+      id: 7,
+      title: "PayPal Strategy",
+      image: "/lovable-uploads/ad5f59da-961c-4a3e-bf03-85941c87cf7e.png",
+    },
+    {
+      id: 8,
+      title: "Collab Missing",
+      image: "/lovable-uploads/3dc16463-9a74-490c-b7c4-9f3c8d33d6b0.png",
+    },
+    // Previous images
+    {
+      id: 9,
+      title: "Kohram - Music Album",
+      image: "/lovable-uploads/f67a2ea1-3098-496a-800e-c2fe7cc5062d.png",
+    },
+    {
+      id: 10,
+      title: "Fazilpuria Firing",
+      image: "/lovable-uploads/01058e33-6a13-4cef-a456-973de11f733d.png",
+    },
+    {
+      id: 11,
+      title: "Teachers vs Students",
+      image: "/lovable-uploads/97d85109-7c99-4096-b299-9cbae2004ea7.png",
+    },
+    {
+      id: 12,
+      title: "Sumit x Karan x Aujla",
+      image: "/lovable-uploads/355df305-c794-4d86-b4ce-f5a8b3dd0954.png",
+    },
+    {
+      id: 13,
       title: "Types of Monitors",
       image: "/lovable-uploads/86330dd7-9fb6-444d-ae6e-22730a35c50a.png",
     },
     {
-      id: 6,
+      id: 14,
       title: "YouTube Channel Closure",
       image: "/lovable-uploads/8b7cac6f-22f0-41ec-8f66-5a251cca3415.png",
     },
     {
-      id: 7,
+      id: 15,
       title: "Gaane Delete",
       image: "/lovable-uploads/b4d503f4-0ebc-4c8e-a5d9-597bb81df823.png",
     },
     {
-      id: 8,
+      id: 16,
       title: "Controversy Explained",
       image: "/lovable-uploads/681285fb-bbd7-40cf-9a23-8b607dd2c350.png",
     },
     {
-      id: 9,
+      id: 17,
       title: "Bigg Boss Collab",
       image: "/lovable-uploads/7fe6fbf5-08cf-4874-a482-35e09e9d5090.png",
     },

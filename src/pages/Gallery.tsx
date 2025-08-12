@@ -11,50 +11,71 @@ const Gallery = () => {
   useScrollReveal();
 
   const thumbnails = [
-    // Featured slideshow thumbnails
+    // New featured thumbnails at the top
     {
       id: 1,
+      image: "/lovable-uploads/9d7928e7-1896-4956-a94d-c76a7c9b30d5.png",
+      category: "Tech"
+    },
+    {
+      id: 2,
+      image: "/lovable-uploads/8a083741-40b8-4d83-8e87-4613d9d59eda.png",
+      category: "Finance"
+    },
+    {
+      id: 3,
+      image: "/lovable-uploads/ad5f59da-961c-4a3e-bf03-85941c87cf7e.png",
+      category: "Tech"
+    },
+    {
+      id: 4,
+      image: "/lovable-uploads/3dc16463-9a74-490c-b7c4-9f3c8d33d6b0.png",
+      category: "Entertainment"
+    },
+    // Previous featured thumbnails
+    {
+      id: 5,
       image: "/lovable-uploads/f67a2ea1-3098-496a-800e-c2fe7cc5062d.png",
       category: "Music"
     },
     {
-      id: 2,
+      id: 6,
       image: "/lovable-uploads/01058e33-6a13-4cef-a456-973de11f733d.png",
       category: "Entertainment"
     },
     {
-      id: 3,
+      id: 7,
       image: "/lovable-uploads/97d85109-7c99-4096-b299-9cbae2004ea7.png",
       category: "Education"
     },
     {
-      id: 4,
+      id: 8,
       image: "/lovable-uploads/355df305-c794-4d86-b4ce-f5a8b3dd0954.png",
       category: "Music"
     },
     // Additional portfolio thumbnails
     {
-      id: 5,
+      id: 9,
       image: "/lovable-uploads/86330dd7-9fb6-444d-ae6e-22730a35c50a.png",
       category: "Comedy"
     },
     {
-      id: 6,
+      id: 10,
       image: "/lovable-uploads/8b7cac6f-22f0-41ec-8f66-5a251cca3415.png",
       category: "Tech"
     },
     {
-      id: 7,
+      id: 11,
       image: "/lovable-uploads/b4d503f4-0ebc-4c8e-a5d9-597bb81df823.png",
       category: "Music"
     },
     {
-      id: 8,
+      id: 12,
       image: "/lovable-uploads/681285fb-bbd7-40cf-9a23-8b607dd2c350.png",
       category: "News"
     },
     {
-      id: 9,
+      id: 13,
       image: "/lovable-uploads/7fe6fbf5-08cf-4874-a482-35e09e9d5090.png",
       category: "Entertainment"
     }
